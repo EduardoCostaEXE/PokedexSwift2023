@@ -15,15 +15,9 @@ class AppCoordinator {
         self.window = window
     }
     
-    func start() {
-        let pokedexViewController = pokedexViewController()
-//        let listaPokemonsViewModel = ListaPokemonsViewModel()
-//        pokedexViewController.viewModel = listaPokemonsViewModel
-                
-        let navigationController = UINavigationController(rootViewController: pokedexViewController)
-                
-        window.rootViewController = navigationController
-        
-        window.makeKeyAndVisible()
+    func start(){
+        let pokedexView = PokedexViewController()
+        let listaPokemonsViewModel = PokedexViewModel()
+        pokedexView.viewModel = listaPokemonsViewModel
     }
 }
