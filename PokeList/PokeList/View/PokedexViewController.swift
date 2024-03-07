@@ -59,7 +59,7 @@ class PokedexViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-                self.viewModel?.model?.remove(at: indexPath.row)
+                self.viewModel.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 AppDefaults.removeUser(index: indexPath.row)
                 completionHandler(true)
@@ -70,7 +70,7 @@ class PokedexViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
             }
             deleteAction.image = UIImage(systemName: "trash")
-            deleteAction.backgroundColor = Color(type: .adaptableColors(.red)).build
+        deleteAction.backgroundColor = UIColor(.red)
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
             return configuration
         }

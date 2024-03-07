@@ -9,5 +9,10 @@ import Foundation
 import UIKit
 
 struct PokedexViewModel{
+    var model: PokemonModel
+    var pokemons: [PokemonModel]
     
+    func remove(index: Int){
+        pokemons.remove(at: index)
+    }
 }
